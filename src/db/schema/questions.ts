@@ -4,7 +4,7 @@ import { rooms } from "./rooms.ts";
 export const questions = pgTable('questions', {
   id: uuid().primaryKey().defaultRandom(),
   question: text().notNull(),
-  answear: text(),
+  answer: text(),
   roomId: uuid().references(() => rooms.id).notNull(),
   createdAt: timestamp().defaultNow().notNull(),
 })
